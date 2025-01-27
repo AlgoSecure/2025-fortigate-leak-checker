@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FortiGate Config Leak Checker</title>
+
+    <link href="./assets/main.css" rel="stylesheet" />
+
+    <script>var lang = "en";</script>
+    <script defer src="./assets/main.js"></script>
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <a class="logo" href="https://algolighthouse.fr" target="_blank" rel="noopener">
+                <img src="./assets/logo.png" alt="AlgoLightHouse logo" />
+            </a>
+            <a href="./fr" class="lang">
+                <img src="./assets/flag-fr.png" alt="french flag" />
+                French version
+            </a>
+        </div>
+
+        <h1>FortiGate Config Leak Checker</h1>
+
+        <div>
+            <div class="context">
+                <p>
+                    On January 14 2025, a hacker group leaked Fortinet FortiGate firewall configurations, 
+                    including plaintext credentials, for over 15,000 devices from an authentication bypass 
+                    zero-day vulnerability disclosed in October 2022 (<a href="https://nvd.nist.gov/vuln/detail/cve-2022-40684" target="_blank" rel="noopener">CVE-2022-40684</a>).
+                </p>
+                <p>
+                    You can check here whether your IPs or CIDRs are affected by the data leak 
+                    (<a href="https://github.com/arsolutioner/fortigate-belsen-leak/blob/main/affected_ips.txt" target="_blank" rel="noopener">source</a>).
+                </p>
+                <p>
+                    <strong>If certain addresses are affected, 
+                    we recommend that you update admin VPN credentials 
+                    and monitor for unauthorized access.</strong>
+                </p>
+                <p>
+                    In addition, it's strongly recommended to patch FortiOS/FortiProxy against the recent zero day 
+                    <a href="https://nvd.nist.gov/vuln/detail/cve-2024-55591" target="_blank" rel="noopener">CVE-2024-55591</a>:
+                </p>
+                <ul>
+                    <li>FortiOS 7.0.0 to 7.0.16 vulnerable, patched from 7.0.17</li>
+                    <li>FortiProxy 7.0.0 to 7.0.19 vulnerable, patched from 7.0.20</li>
+                    <li>FortiProxy 7.2.0 to 7.2.12 vulnerable, patched from 7.2.13</li>
+                </ul>
+                <br/>
+                <br/>
+                <div class="reference">
+                    <p>
+                        Reference:
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="https://censys.com/fortigate-config-leak-impact/" target="_blank" rel="noopener">
+                                Censys - Massive FortiGate Config Leak: Assessing the Impact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://doublepulsar.com/2022-zero-day-was-used-to-raid-fortigate-firewall-configs-somebody-just-released-them-a7a74e0b0c7f" target="_blank" rel="noopener">
+                                Medium - 2022 zero day was used to raid Fortigate firewall configs. Somebody just released them.
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form">
+                <div>Enter IPv4 addresses or CIDR to check below:</div>
+                <textarea id="input" autofocus spellcheck="false" rows="8" placeholder="51.178.35.181
+104.26.3.147/28
+..."></textarea>
+                <button type="submit" onclick="ipsLookup()">Check IPs</button>
+                <br/><br/><br/>
+                <small>
+                    None of your data is sent to our servers - 
+                    everything happens on your browser (<a href="https://github.com/AlgoSecure/2025-fortigate-leak-checker" target="_blank" rel="noopener">source code</a>)
+                </small>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

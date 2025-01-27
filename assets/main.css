@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'Sora';
+    src: url('./Sora-Regular.ttf') format('truetype');
+}  
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Sora';
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f8f8f0;
+}
+
+div.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+div.logo a.logo img {
+    height: 3.5rem;
+    margin-left: -12px;
+    margin-right: 4.5rem;
+}
+
+div.logo a.lang {
+    text-decoration: none;
+    color: #7e7e7e;
+    display: flex;
+    align-items: center;
+}
+
+div.logo a.lang img {
+    height: 16px;
+    aspect-ratio: 1.5;
+    margin-right: 12px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 8vh auto;
+    padding: 0 20px;
+}
+
+main > div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+@media (min-width: 1000px) {
+    main > div {
+        flex-direction: row;
+    }
+}
+
+main > div > .context {
+    flex: 4;
+    padding-right: 100px;
+    margin-bottom: 3rem;
+}
+
+main > div > .form {
+    flex: 3;
+    padding-right: 20px;
+}
+
+textarea {
+    outline: none;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    display: block;
+    margin: 1.3rem 0;
+    font-size: 15px;
+}
+
+button {
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    color: #ffffff;
+    background-color: #95cd41;
+    transition: all .2s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6ba725;
+}
+
+p {
+    margin-bottom: 1.6rem;
+}
+
+ul {
+    margin-left: 2.2rem;
+    margin-top: -.8rem;
+}
+
+li {
+    margin-bottom: .3rem;
+}
+
+.reference {
+    font-size: 15px;
+}

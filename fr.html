@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vérification de fuite de configuration FortiGate</title>
+
+    <link href="./assets/main.css" rel="stylesheet" />
+
+    <script>var lang = "fr";</script>
+    <script defer src="./assets/main.js"></script>
+</head>
+<body>
+    <main>
+        <div class="logo">
+            <a class="logo" href="https://algolighthouse.fr" target="_blank" rel="noopener">
+                <img src="./assets/logo.png" alt="AlgoLightHouse logo" />
+            </a>
+            <a href="./" class="lang">
+                <img src="./assets/flag-uk.png" alt="uk flag" />
+                English version
+            </a>
+        </div>
+
+        <h1>Vérification de fuite de<br/>configuration FortiGate</h1>
+
+        <div>
+            <div class="context">
+                <p>
+                    Le 14 janvier 2025, un groupe d'attaquants a divulgué des configurations de pare-feu FortiGate, 
+                    notamment les informations d'identification en clair pour plus de 15 000 appareils, obtenus via une 
+                    vulnérabilité zero-day divulguée en octobre 2022 (<a href="https://nvd.nist.gov/vuln/detail/cve-2022-40684" target="_blank" rel="noopener">CVE-2022-40684</a>).
+                </p>
+                <p>
+                    Vous pouvez vérifier ci-contre si vos adresses IP ou CIDR sont concernés par la fuite de données 
+                    (<a href="https://github.com/arsolutioner/fortigate-belsen-leak/blob/main/affected_ips.txt" target="_blank" rel="noopener">source</a>).
+                </p>
+                <p>
+                    <strong>Si certaines adresses IP sont concernées, 
+                    nous vous recommandons de modifier les identifiants de connexion 
+                    de l'administrateur VPN et de surveiller les accès non autorisés.</strong>
+                </p>
+                <p>
+                    De plus, nous vous recommandons fortement de mettre à jour FortiOS/FortiProxy concernant la récente vulnérabilité zero-day 
+                    <a href="https://nvd.nist.gov/vuln/detail/cve-2024-55591" target="_blank" rel="noopener">CVE-2024-55591</a>:
+                </p>
+                <ul>
+                    <li>FortiOS vulnérable de 7.0.0 à 7.0.16, corrigé à partir de 7.0.17</li>
+                    <li>FortiProxy vulnérable de 7.0.0 à 7.0.19, corrigé à partir de 7.0.20</li>
+                    <li>FortiProxy vulnérable de 7.2.0 à 7.2.12, corrigé à partir de 7.2.13</li>
+                </ul>
+                <br/>
+                <br/>
+                <div class="reference">
+                    <p>
+                        Sources :
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="https://censys.com/fortigate-config-leak-impact/" target="_blank" rel="noopener">
+                                Censys - Massive FortiGate Config Leak: Assessing the Impact
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://doublepulsar.com/2022-zero-day-was-used-to-raid-fortigate-firewall-configs-somebody-just-released-them-a7a74e0b0c7f" target="_blank" rel="noopener">
+                                Medium - 2022 zero day was used to raid Fortigate firewall configs. Somebody just released them.
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form">
+                <div>Entrez les adresses IPv4 ou CIDR à vérifier ci-dessous :</div>
+                <textarea id="input" autofocus spellcheck="false" rows="8" placeholder="51.178.35.181
+104.26.3.147/28
+..."></textarea>
+                <button type="submit" onclick="ipsLookup()">Vérifier les adresses IP</button>
+                <br/><br/><br/>
+                <small>
+                    Aucune de vos données n'est envoyée sur nos<br/>serveurs - 
+                    tout se passe sur votre navigateur<br/>
+                    (<a href="https://github.com/AlgoSecure/2025-fortigate-leak-checker" target="_blank" rel="noopener">code source</a>)
+                </small>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
